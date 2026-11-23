@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Explore the city and interact with a landmark",
+    "sanity": true,
+    "viewport": "desktop",
+    "covers": [
+      "3D city rendering",
+      "keyboard character movement",
+      "nearby landmark discovery",
+      "E key interaction"
+    ],
+    "description": "Verifies the playable city loads, the player can move, and a nearby landmark can be explored.",
+    "steps": [
+      "Load the REAL WORLD game",
+      "Use W A S D to walk toward a landmark",
+      "Press E when nearby"
+    ],
+    "expected": "The player moves through the 3D city and the landmark interaction updates the activity notice."
+  },
+  {
+    "name": "Enter a vehicle and switch camera modes",
+    "viewport": "desktop",
+    "covers": [
+      "vehicle proximity interaction",
+      "F key enter and exit",
+      "driving controls",
+      "first-person and third-person camera switching"
+    ],
+    "description": "Verifies the red car can be entered, driven, exited and viewed with either camera.",
+    "steps": [
+      "Walk toward the red car",
+      "Press F to enter",
+      "Use W A S D to drive and press C to switch camera",
+      "Press F to exit"
+    ],
+    "expected": "Vehicle mode activates, speed responds to input, camera mode changes and the player can exit."
+  },
+  {
+    "name": "Use mobile controls and retain saved progress",
+    "viewport": "mobile",
+    "covers": [
+      "responsive mobile layout",
+      "touch movement controls",
+      "camera control button",
+      "local save persistence"
+    ],
+    "description": "Verifies mobile controls work and saved player settings persist after reload.",
+    "steps": [
+      "Open the game at a mobile viewport",
+      "Hold a directional touch control",
+      "Tap CAM",
+      "Reload the game"
+    ],
+    "expected": "Touch controls move the character and the saved camera mode and player position are restored."
+  },
+  {
+    "name": "Handle interaction when no landmark is nearby",
+    "viewport": "desktop",
+    "covers": [
+      "empty interaction guardrail",
+      "user-visible feedback",
+      "safe player movement bounds"
+    ],
+    "description": "Verifies interaction outside landmark range gives feedback and movement stays inside the playable map.",
+    "steps": [
+      "Move away from landmarks",
+      "Press E",
+      "Continue toward the map edge"
+    ],
+    "expected": "A helpful no-nearby-interaction message appears and the player remains within the city bounds."
+  }
+]
